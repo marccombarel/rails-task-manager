@@ -1,1 +1,13 @@
 <h1>Index</h1>
+
+<% @tasks.each do |task| %>
+  <div class="task">
+    <i class="far fa-check-circle"></i>
+    <div class="task-infos">
+      <h2><%= link_to task.title, task_path(task.id)  %></h2>
+      <p><%= task.details %></p>
+    </div>
+  </div>
+<% end %>
+
+<%= link_to '+ Add a new task', new_task_path %>
